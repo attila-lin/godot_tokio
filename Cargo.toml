@@ -2,17 +2,17 @@
 name = "godot_tokio"
 version = "0.3.0"
 edition = "2021"
-license = "MIT"
-keywords = ["godot", "gdext", "gdextention", "async", "tokio"]
-repository = "https://github.com/2-3-5-41/godot_tokio"
-readme = "README.md"
 description = "The tokio-async runtime wrapped in a gdextention object to be used as an engine singleton in your gdext project."
+readme = "README.md"
+repository = "https://github.com/2-3-5-41/godot_tokio"
+license = "MIT"
+keywords = ["async", "gdext", "gdextention", "godot", "tokio"]
+
+[dependencies]
+godot = { git = "https://github.com/godot-rust/gdext.git" }
+tokio = "1.32.0"
 
 [features]
 default = ["multi-thread"]
-single-thread = ["tokio/rt"]
 multi-thread = ["tokio/rt-multi-thread"]
-
-[dependencies]
-godot = "0.3.0"
-tokio = "1.32.0"
+single-thread = ["tokio/rt"]
